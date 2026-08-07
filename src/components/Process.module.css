@@ -1,0 +1,131 @@
+.title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.stepIconWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.stepIcon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--bg-main);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.step:hover .stepIcon {
+  transform: scale(1.1);
+  background-color: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.connector {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: var(--border-color);
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.step:hover .connector {
+  background-color: var(--accent);
+}
+
+.stepContent {
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.stepNumber {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+.ctaWrapper {
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+  
+  .step {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .stepIconWrapper {
+    width: auto;
+    margin-right: 24px;
+  }
+  
+  .connector {
+    width: 3px;
+    height: 100%;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .stepContent {
+    text-align: left;
+    margin-top: 10px;
+  }
+}

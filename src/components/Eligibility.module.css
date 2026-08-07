@@ -1,0 +1,61 @@
+.title {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 50px;
+}
+
+.criteriaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.criteriaCard {
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+  /* Add an entrance animation for when it scrolls into view */
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.criteriaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.criteriaCard p {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}

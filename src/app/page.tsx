@@ -1,69 +1,54 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useState } from 'react';
+import Hero from '@/components/Hero';
+import VSLSection from '@/components/VSLSection';
+import Eligibility from '@/components/Eligibility';
+import Process from '@/components/Process';
+import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
+import FormModal from '@/components/FormModal';
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <header style={{ padding: '20px', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--card-bg)' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--primary)', fontFamily: 'var(--font-heading)' }}>
+            Money<span style={{ color: 'var(--accent)' }}>Heights</span>
+          </div>
+          <button className="btn-primary" onClick={openModal} style={{ padding: '10px 24px', fontSize: '0.95rem' }}>
+            Apply Now
+          </button>
+        </div>
+      </header>
+
+      <Hero onOpenModal={openModal} />
+      <VSLSection />
+      <Eligibility />
+      <Process onOpenModal={openModal} />
+      <Testimonials />
+      <FAQ />
+      
+      <FormModal isOpen={isModalOpen} onClose={closeModal} />
+
+      <footer style={{ backgroundColor: '#0F172A', color: 'white', padding: '40px 0', textAlign: 'center' }}>
+        <div className="container">
+          <div style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '20px', fontFamily: 'var(--font-heading)' }}>
+            Money<span style={{ color: 'var(--accent)' }}>Heights</span>
+          </div>
+          <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginBottom: '10px' }}>
+            © {new Date().getFullYear()} Money Heights. All rights reserved.
+          </p>
+          <p style={{ color: '#64748B', fontSize: '0.8rem' }}>
+            Terms & Conditions | Privacy Policy
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
