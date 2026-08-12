@@ -7,17 +7,17 @@
 .subtitle {
   font-size: 1.1rem;
   color: var(--text-muted);
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .criteriaGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  gap: 16px;
 }
 
 .criteriaCard {
-  padding: 30px;
+  padding: 20px;
   display: flex;
   align-items: flex-start;
   gap: 20px;
