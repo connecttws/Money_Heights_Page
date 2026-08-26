@@ -1,16 +1,19 @@
 .title {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 800;
   color: var(--primary);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
   margin-bottom: 60px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .timeline {
@@ -38,25 +41,26 @@
 }
 
 .stepIcon {
-  width: 70px;
-  height: 70px;
-  background-color: var(--bg-main);
-  border: 2px solid var(--accent);
+  width: 76px;
+  height: 76px;
+  background-color: var(--card-bg);
+  border: 3px solid var(--accent);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   z-index: 2;
   box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .step:hover .stepIcon {
-  transform: scale(1.1);
+  transform: scale(1.15);
   background-color: var(--accent);
   color: white;
-  box-shadow: var(--shadow-glow);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);
 }
 
 .connector {
@@ -64,14 +68,15 @@
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 3px;
-  background-color: var(--border-color);
+  height: 4px;
+  background-color: var(--card-border);
   z-index: 1;
   transform: translateY(-50%);
+  transition: background-color 0.4s ease;
 }
 
 .step:hover .connector {
-  background-color: var(--accent);
+  background-color: rgba(16, 185, 129, 0.5);
 }
 
 .stepContent {
@@ -81,16 +86,17 @@
 }
 
 .stepNumber {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 800;
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
 }
 
 .stepTitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--text-main);
 }
 
@@ -99,16 +105,25 @@
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    margin-bottom: 40px;
+  }
+  
   .timeline {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
+    padding-left: 10px;
   }
   
   .step {
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    width: 100%;
   }
   
   .stepIconWrapper {
@@ -117,15 +132,16 @@
   }
   
   .connector {
-    width: 3px;
+    width: 4px;
     height: 100%;
-    top: 70px;
+    top: 76px;
     left: 50%;
     transform: translateX(-50%);
   }
   
   .stepContent {
     text-align: left;
-    margin-top: 10px;
+    margin-top: 6px;
+    padding: 0;
   }
 }

@@ -30,9 +30,9 @@ export default function Testimonials() {
           <p className={styles.subtitle}>See what our satisfied customers have to say about our seamless service.</p>
         </div>
         
-        <div className={styles.grid}>
+        <div className={styles.testimonialGrid}>
           {reviews.map((review, index) => (
-            <div key={index} className={`glass-card ${styles.card}`}>
+            <div key={index} className={`glass-card ${styles.testimonialCard}`}>
               <div className={styles.stars}>
                 {"★".repeat(review.rating)}
               </div>

@@ -7,8 +7,9 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
       <div className={`container ${styles.heroContainer}`}>
         <div className={styles.heroContent}>
           <h1 className="animate-fade-in-up">
-            Get an Instant <span className={styles.highlight}>Top-Up Loan</span><br />
-            on Your Existing Car Loan
+            <span className={styles.topLine}>Get an Instant</span>{' '}
+            <span className={styles.highlight}>Top-Up Loan</span>
+            <span className={styles.heroTitleSub}>on Your Existing Car Loan</span>
           </h1>
           <p className={`${styles.heroSubtext} animate-fade-in-up`} style={{ animationDelay: '0.2s' }}>
             Already have a car loan with HDFC Bank, ICICI Bank, or Axis Bank? You may be eligible for additional funds. We help you compare options, complete the documentation, and get faster approvals with minimal hassle.
