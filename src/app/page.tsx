@@ -25,7 +25,7 @@ export default function Home() {
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="header-logo">
-            Money<span style={{ color: 'var(--accent)' }}>Heights</span>
+            Moneyy<span style={{ color: 'var(--accent)' }}>Heights</span>
           </div>
           <button className="btn-primary header-btn" onClick={openModal}>
             Apply Now
@@ -44,14 +44,14 @@ export default function Home() {
       <footer style={{ backgroundColor: 'var(--primary)', color: 'white', padding: '60px 0 40px', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <div className="container">
           <div style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '24px', fontFamily: 'var(--font-heading)', letterSpacing: '-0.5px' }}>
-            Money<span style={{ color: 'var(--accent)' }}>Heights</span>
+            Moneyy<span style={{ color: 'var(--accent)' }}>Heights</span>
           </div>
           <p style={{ color: '#94A3B8', fontSize: '0.95rem', marginBottom: '16px', maxWidth: '400px', margin: '0 auto 24px', lineHeight: '1.6' }}>
             Empowering your financial journey with seamless top-up loans and expert guidance.
           </p>
           <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--accent)', margin: '0 auto 30px' }}></div>
           <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginBottom: '12px' }}>
-            © {new Date().getFullYear()} Money Heights. All rights reserved.
+            © {new Date().getFullYear()} Moneyy Heights. All rights reserved.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', color: '#64748B', fontSize: '0.85rem' }}>
             <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color='white'} onMouseOut={(e) => e.currentTarget.style.color='#64748B'}>Terms & Conditions</span>

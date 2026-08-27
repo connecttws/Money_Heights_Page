@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Money Heights | Top-Up Your Car Loan",
-  description: "Get an Instant Top-Up Loan on Your Existing Car Loan with HDFC, ICICI, or Axis Bank.",
+  title: "Moneyy Heights | Top-Up Your Car Loan",
+  description: "Get an instant top-up on your existing car loan with Moneyy Heights. Fast approval, minimal documentation.",
 };
 
 export default function RootLayout({

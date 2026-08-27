@@ -15,7 +15,7 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             <div className={styles.videoContainer}>
               <iframe
                 src="https://fast.wistia.net/embed/iframe/rndvo64mfb?seo=false&videoFoam=true"
-                title="MoneyHeights VSL"
+                title="MoneyyHeights VSL"
                 allow="autoplay; fullscreen"
                 allowFullScreen
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
@@ -24,7 +24,7 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
           </div>
 
           <p className={`${styles.heroSubtext} animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
-            Already have a car loan with HDFC, ICICI, or Axis Bank? You may be eligible for additional funds with quick approvals and minimal paperwork
+            Already have a car loan with <strong>HDFC, ICICI, or Axis Bank</strong>? You may be eligible for additional funds with quick approvals and minimal paperwork
           </p>
           
           <div className={`${styles.ctaGroup} animate-fade-in-up`} style={{ animationDelay: '0.6s' }}>
