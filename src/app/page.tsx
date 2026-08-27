@@ -25,10 +25,10 @@ export default function Home() {
         WebkitBackdropFilter: 'blur(16px)' 
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--primary)', fontFamily: 'var(--font-heading)', letterSpacing: '-0.5px' }}>
+          <div className="header-logo">
             Money<span style={{ color: 'var(--accent)' }}>Heights</span>
           </div>
-          <button className="btn-primary" onClick={openModal} style={{ padding: '12px 28px', fontSize: '1rem' }}>
+          <button className="btn-primary header-btn" onClick={openModal}>
             Apply Now
           </button>
         </div>
