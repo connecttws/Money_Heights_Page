@@ -1,7 +1,6 @@
 "use client";
 import { useState } from 'react';
 import Hero from '@/components/Hero';
-import VSLSection from '@/components/VSLSection';
 import Eligibility from '@/components/Eligibility';
 import Process from '@/components/Process';
 import Testimonials from '@/components/Testimonials';
@@ -35,7 +34,6 @@ export default function Home() {
       </header>
 
       <Hero onOpenModal={openModal} />
-      <VSLSection />
       <Eligibility />
       <Process onOpenModal={openModal} />
       <Testimonials />

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './Hero.module.css';
 
 export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
@@ -11,22 +10,25 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             <span className={styles.highlight}>Top-Up Loan</span>
             <span className={styles.heroTitleSub}>on Your Existing Car Loan</span>
           </h1>
-          <p className={`${styles.heroSubtext} animate-fade-in-up`} style={{ animationDelay: '0.2s' }}>
-            Already have a car loan with HDFC Bank, ICICI Bank, or Axis Bank? You may be eligible for additional funds. We help you compare options, complete the documentation, and get faster approvals with minimal hassle.
-          </p>
-          <div className={`${styles.ctaGroup} animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
-            <button className="btn-primary" onClick={onOpenModal}>Apply Now - Give the form</button>
+          
+          <div className={`${styles.videoContainerWrapper} animate-fade-in-up`} style={{ animationDelay: '0.2s' }}>
+            <div className={styles.videoContainer}>
+              <iframe
+                src="https://fast.wistia.net/embed/iframe/rndvo64mfb?seo=false&videoFoam=true"
+                title="MoneyHeights VSL"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+              ></iframe>
+            </div>
           </div>
-        </div>
-        <div className={`${styles.heroImageWrapper} animate-fade-in-up`} style={{ animationDelay: '0.6s' }}>
-          <div className={styles.heroImagePlaceholder}>
-            <Image 
-              src="/hero_car.png" 
-              alt="Luxury Car" 
-              fill 
-              style={{ objectFit: 'cover', borderRadius: 'inherit' }}
-              priority
-            />
+
+          <p className={`${styles.heroSubtext} animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
+            Already have a car loan with HDFC, ICICI, or Axis Bank? You may be eligible for additional funds with quick approvals and minimal paperwork
+          </p>
+          
+          <div className={`${styles.ctaGroup} animate-fade-in-up`} style={{ animationDelay: '0.6s' }}>
+            <button className="btn-primary" onClick={onOpenModal}>Apply Now</button>
           </div>
         </div>
       </div>
