@@ -76,13 +76,13 @@
     font-size: 2.2rem;
   }
   .subtitle {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
   }
   .criteriaList {
-    gap: 12px;
+    gap: 8px;
   }
   .criteriaCard {
-    padding: 16px;
+    padding: 12px;
     align-items: flex-start;
   }
 }

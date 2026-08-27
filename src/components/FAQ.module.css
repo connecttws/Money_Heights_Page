@@ -90,3 +90,18 @@
   line-height: 1.7;
   font-size: 1.05rem;
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    margin-bottom: 24px;
+  }
+  .questionWrapper {
+    padding: 16px 20px;
+  }
+  .open .answerWrapper {
+    padding: 0 20px 16px 20px;
+  }
+}
