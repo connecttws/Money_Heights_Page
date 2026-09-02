@@ -25,7 +25,7 @@ export default function Home() {
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div className="header-logo">
-            Moneyy<span style={{ color: 'var(--accent)' }}>Heights</span>
+            Moneyy<span style={{ color: 'var(--accent)' }}>Height</span>
           </div>
           <button className="btn-primary header-btn" onClick={openModal}>
             Apply Now
