@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Moneyy Heights | Top-Up Your Car Loan",
-  description: "Get an instant top-up on your existing car loan with Moneyy Heights. Fast approval, minimal documentation.",
+  title: "Moneyy Height | Top-Up Your Car Loan",
+  description: "Get an instant top-up on your existing car loan with Moneyy Height. Fast approval, minimal documentation.",
 };
 
 export default function RootLayout({

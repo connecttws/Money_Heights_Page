@@ -15,7 +15,7 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             <div className={styles.videoContainer}>
               <iframe
                 src="https://fast.wistia.net/embed/iframe/rndvo64mfb?seo=false&videoFoam=true"
-                title="MoneyyHeights VSL"
+                title="MoneyyHeight VSL"
                 allow="autoplay; fullscreen"
                 allowFullScreen
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
