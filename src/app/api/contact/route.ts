@@ -56,6 +56,32 @@ export async function POST(request: Request) {
       },
     });
 
+    // --- Neodove CRM Integration ---
+    try {
+      const neodovePayload = {
+        name: fullName || '—',
+        mobile: Number(phone) || phone, // CRM expects a number format usually, fallback to string if NaN
+        email: email || '—',
+        detail1: `Place: ${place}, Vehicle: ${vehicleName}, Year: ${carYear}`,
+        detail2: `Car Type: ${carType}, Bank: ${existingBank}, Duration: ${existingDuration}`
+      };
+
+      const neodoveResponse = await fetch('https://4ab06d9e-c170-4b87-820a-dfef11d65c91.neodove.com/integration/custom/878f575e-f104-4b06-a8a1-dfe1528cc8ef/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(neodovePayload)
+      });
+
+      if (!neodoveResponse.ok) {
+        console.error('[Neodove CRM Error]: Failed with status', neodoveResponse.status);
+      }
+    } catch (crmError) {
+      console.error('[Neodove CRM API Error]:', crmError);
+      // We log the error but don't fail the user request since data is safely in Google Sheets
+    }
+
     return NextResponse.json({ success: true }, { status: 200 });
 
   } catch (error: any) {
