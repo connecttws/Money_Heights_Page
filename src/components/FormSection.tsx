@@ -24,6 +24,17 @@ export default function FormSection() {
       });
 
       if (res.ok) {
+        // Fire Google Ads lead form conversion event BEFORE navigating
+        // This is the reliable method — fires while gtag is guaranteed loaded
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-18371984960/z2RzCPrg-_IcEMD8uLhE',
+            value: 1.0,
+            currency: 'INR',
+          });
+        }
+        // Small delay to let the gtag beacon fire before navigation
+        await new Promise(resolve => setTimeout(resolve, 300));
         router.push('/thank-you');
       } else {
         const errorData = await res.json();

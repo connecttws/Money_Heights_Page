@@ -1,4 +1,5 @@
 "use client";
+import Script from 'next/script';
 import Hero from '@/components/Hero';
 import Eligibility from '@/components/Eligibility';
 import Process from '@/components/Process';
@@ -16,6 +17,16 @@ export default function Home() {
 
   return (
     <main>
+      {/* Event snippet for Page view conversion page */}
+      <Script id="gtag-page-view-conversion" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18371984960/diLgCKjE_PIcEMD8uLhE',
+              'value': 1.0,
+              'currency': 'INR'
+          });
+        `}
+      </Script>
       <header style={{ 
         position: 'sticky', top: 0, zIndex: 100, 
         padding: '16px 0', 
