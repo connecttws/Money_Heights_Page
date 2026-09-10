@@ -1,5 +1,5 @@
 "use client";
-import Script from 'next/script';
+import { useEffect } from 'react';
 import Hero from '@/components/Hero';
 import Eligibility from '@/components/Eligibility';
 import Process from '@/components/Process';
@@ -8,6 +8,26 @@ import FAQ from '@/components/FAQ';
 import FormSection from '@/components/FormSection';
 
 export default function Home() {
+
+  // Fire "Page view" conversion once gtag is ready
+  useEffect(() => {
+    const firePageViewConversion = () => {
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-18371984960/diLgCKjE_PIcEMD8uLhE',
+          value: 1.0,
+          currency: 'INR',
+        });
+      } else {
+        // gtag not ready yet — retry after 500ms
+        setTimeout(firePageViewConversion, 500);
+      }
+    };
+    // Small initial delay so layout gtag scripts load first
+    const timer = setTimeout(firePageViewConversion, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToForm = () => {
     const formElement = document.getElementById('apply-form');
     if (formElement) {
@@ -17,16 +37,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* Event snippet for Page view conversion page */}
-      <Script id="gtag-page-view-conversion" strategy="afterInteractive">
-        {`
-          gtag('event', 'conversion', {
-              'send_to': 'AW-18371984960/diLgCKjE_PIcEMD8uLhE',
-              'value': 1.0,
-              'currency': 'INR'
-          });
-        `}
-      </Script>
       <header style={{ 
         position: 'sticky', top: 0, zIndex: 100, 
         padding: '16px 0', 
