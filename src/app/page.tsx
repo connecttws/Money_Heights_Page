@@ -1,4 +1,5 @@
 "use client";
+import Script from 'next/script';
 import Hero from '@/components/Hero';
 import Eligibility from '@/components/Eligibility';
 import Process from '@/components/Process';
@@ -7,7 +8,6 @@ import FAQ from '@/components/FAQ';
 import FormSection from '@/components/FormSection';
 
 export default function Home() {
-
 
   const scrollToForm = () => {
     const formElement = document.getElementById('apply-form');
@@ -18,6 +18,18 @@ export default function Home() {
 
   return (
     <main>
+      {/* Event snippet for Page view conversion page */}
+      <Script id="gtag-conversion-main" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18371984960/diLgCKjE_PIcEMD8uLhE',
+              'value': 1.0,
+              'currency': 'INR'
+          });
+        `}
+      </Script>
       <header style={{ 
         position: 'sticky', top: 0, zIndex: 100, 
         padding: '16px 0', 

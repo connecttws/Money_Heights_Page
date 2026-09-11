@@ -41,12 +41,6 @@ export default function RootLayout({
             gtag('js', new Date());
 
             gtag('config', 'AW-18371984960');
-
-            gtag('event', 'conversion', {
-                'send_to': 'AW-18371984960/diLgCKjE_PIcEMD8uLhE',
-                'value': 1.0,
-                'currency': 'INR'
-            });
           `}
         </Script>
       </body>

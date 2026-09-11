@@ -5,9 +5,21 @@ import Script from 'next/script';
 export default function ThankYou() {
   return (
     <main>
-      {/* Event snippet for Submit lead form - Thanku conversion page */}
-      <Script id="gtag-conversion-event" strategy="afterInteractive">
+      {/* Google tag (gtag.js) */}
+      <Script
+        id="gtag-thankyou-base"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18371984960"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-thankyou-init" strategy="afterInteractive">
         {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-18371984960');
+
+          /* Event snippet for Submit lead form - Thanku conversion page */
           gtag('event', 'conversion', {
               'send_to': 'AW-18371984960/z2RzCPrg-_IcEMD8uLhE',
               'value': 1.0,
