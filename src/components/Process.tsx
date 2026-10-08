@@ -1,41 +1,84 @@
 import styles from './Process.module.css';
 
 const steps = [
-  { title: "Fill the Application Form", icon: "📝" },
-  { title: "Eligibility Check", icon: "🔍" },
-  { title: "Document Verification", icon: "📄" },
-  { title: "Bank Processing", icon: "🏦" },
-  { title: "Approval & Disbursement", icon: "💸" },
+  {
+    step: "Step 1",
+    title: "Check Your Eligibility",
+    desc: (
+      <>Share <strong>basic information</strong> about your <strong>existing car loan and vehicle</strong>.</>
+    ),
+    icon: "📝"
+  },
+  {
+    step: "Step 2",
+    title: "Eligibility Review",
+    desc: (
+      <>We review the information provided against the <strong>applicable lender criteria</strong>.</>
+    ),
+    icon: "🔍"
+  },
+  {
+    step: "Step 3",
+    title: "Documentation",
+    desc: (
+      <>If eligible, you may be asked to provide the <strong>required documents</strong>.</>
+    ),
+    icon: "📄"
+  },
+  {
+    step: "Step 4",
+    title: "Lender Assessment",
+    desc: (
+      <>The <strong>respective lender</strong> reviews your application and documents.</>
+    ),
+    icon: "🏦"
+  },
+  {
+    step: "Step 5",
+    title: "Final Decision",
+    desc: (
+      <>The lender determines the <strong>final loan amount, interest rate, tenure and applicable charges</strong>.</>
+    ),
+    icon: "⚖️"
+  },
+  {
+    step: "Step 6",
+    title: "Disbursement",
+    desc: (
+      <>If approved, <strong>disbursement is handled</strong> according to the lender&apos;s process and terms.</>
+    ),
+    icon: "💸"
+  }
 ];
 
 export default function Process({ onOpenModal }: { onOpenModal: () => void }) {
   return (
-    <section className="section" style={{ backgroundColor: '#fff' }}>
+    <section className="section" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
         <div className="text-center">
-          <h2 className={styles.title}>How Our Process Works</h2>
+          <h2 className={styles.title}>How the Car Loan Top-Up Process Works</h2>
           <p className={styles.subtitle}>
-            Applying for a Car Loan Top-Up is quick and hassle-free. Our team guides you through every step, making the entire process simple and convenient.
+            A structured, transparent <strong>6-step journey</strong> from initial review to lender disbursement.
           </p>
         </div>
         
-        <div className={styles.timeline}>
-          {steps.map((step, index) => (
-            <div key={index} className={styles.step}>
-              <div className={styles.stepIconWrapper}>
-                <div className={styles.stepIcon}>{step.icon}</div>
-                {index < steps.length - 1 && <div className={styles.connector}></div>}
+        <div className={styles.stepGrid}>
+          {steps.map((item, index) => (
+            <div key={index} className={styles.stepCard}>
+              <div className={styles.stepHeader}>
+                <span className={styles.badge}>{item.step}</span>
+                <span className={styles.stepIcon}>{item.icon}</span>
               </div>
-              <div className={styles.stepContent}>
-                <div className={styles.stepNumber}>Step {index + 1}</div>
-                <h3 className={styles.stepTitle}>{step.title}</h3>
-              </div>
+              <h3 className={styles.stepTitle}>{item.title}</h3>
+              <p className={styles.stepDesc}>{item.desc}</p>
             </div>
           ))}
         </div>
         
-        <div className={`text-center ${styles.ctaWrapper}`}>
-          <button className="btn-primary" onClick={onOpenModal}>Apply Now</button>
+        <div className={styles.ctaWrapper}>
+          <button className="btn-primary" onClick={onOpenModal} style={{ padding: '16px 38px', fontSize: '1.15rem', fontWeight: 700 }}>
+            Check Your Eligibility →
+          </button>
         </div>
       </div>
     </section>

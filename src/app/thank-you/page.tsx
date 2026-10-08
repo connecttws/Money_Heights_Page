@@ -1,6 +1,8 @@
 "use client";
 import Link from 'next/link';
 import Script from 'next/script';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function ThankYou() {
   return (
@@ -27,23 +29,8 @@ export default function ThankYou() {
           });
         `}
       </Script>
-      <header style={{ 
-        position: 'sticky', top: 0, zIndex: 100, 
-        padding: '16px 0', 
-        borderBottom: '1px solid var(--card-border)', 
-        backgroundColor: 'rgba(255, 255, 255, 0.85)', 
-        backdropFilter: 'blur(16px)', 
-        WebkitBackdropFilter: 'blur(16px)' 
-      }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Link href="/" className="header-logo" style={{ textDecoration: 'none' }}>
-            Moneyy<span style={{ color: 'var(--accent)' }}>Height</span>
-          </Link>
-          <Link href="/" className="btn-primary header-btn" style={{ textDecoration: 'none' }}>
-            Visit Website
-          </Link>
-        </div>
-      </header>
+      
+      <Header />
 
       <section className="section" style={{ minHeight: 'calc(100vh - 200px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '60px 0' }}>
         <div className="container" style={{ maxWidth: '700px' }}>
@@ -97,32 +84,14 @@ export default function ThankYou() {
             </div>
 
             <Link href="/" className="btn-primary" style={{ textDecoration: 'none', padding: '16px 40px', fontSize: '1.15rem' }}>
-              Visit Website
+              Back to Home
             </Link>
 
           </div>
         </div>
       </section>
 
-      <footer style={{ backgroundColor: 'var(--primary)', color: 'white', padding: '60px 0 40px', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-        <div className="container">
-          <div style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '24px', fontFamily: 'var(--font-heading)', letterSpacing: '-0.5px' }}>
-            Moneyy<span style={{ color: 'var(--accent)' }}>Height</span>
-          </div>
-          <p style={{ color: '#94A3B8', fontSize: '0.95rem', marginBottom: '16px', maxWidth: '400px', margin: '0 auto 24px', lineHeight: '1.6' }}>
-            Empowering your financial journey with seamless top-up loans and expert guidance.
-          </p>
-          <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--accent)', margin: '0 auto 30px' }}></div>
-          <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginBottom: '12px' }}>
-            © {new Date().getFullYear()} Moneyy Height. All rights reserved.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', color: '#64748B', fontSize: '0.85rem' }}>
-            <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color='white'} onMouseOut={(e) => e.currentTarget.style.color='#64748B'}>Terms & Conditions</span>
-            <span>|</span>
-            <span style={{ cursor: 'pointer', transition: 'color 0.3s' }} onMouseOver={(e) => e.currentTarget.style.color='white'} onMouseOut={(e) => e.currentTarget.style.color='#64748B'}>Privacy Policy</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

@@ -1,88 +1,124 @@
 .title {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: var(--primary);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   letter-spacing: -1px;
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 50px;
-  line-height: 1.6;
+.subHeading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 14px;
 }
 
-.criteriaList {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 700px;
+.subtitle {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin-bottom: 44px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subtitle strong {
+  color: var(--primary);
+}
+
+.criteriaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
 .criteriaCard {
-  padding: 20px 24px;
+  padding: 24px 24px;
   display: flex;
-  align-items: center;
-  gap: 20px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  align-items: flex-start;
+  gap: 18px;
+  transition: all 0.3s ease;
   cursor: default;
-  background: var(--card-bg);
+  background: #ffffff;
+  border: 1px solid var(--card-border);
   border-radius: 16px;
-  animation: criteriaFadeInUp 0.8s ease forwards;
-  opacity: 0;
-}
-
-@keyframes criteriaFadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+  text-align: left;
 }
 
 .criteriaCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
   border-color: rgba(16, 185, 129, 0.4);
 }
 
 .checkIcon {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+  margin-top: 2px;
+}
+
+.criteriaCardContent {
+  flex: 1;
 }
 
 .criteriaCard p {
   font-size: 1.05rem;
-  color: var(--text-main);
-  font-weight: 500;
+  color: #334155;
   line-height: 1.6;
   margin: 0;
 }
 
+.criteriaCard strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.disclaimerBox {
+  margin-top: 40px;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f8fafc;
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent);
+  padding: 20px 24px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.disclaimerBox strong {
+  color: var(--primary);
+}
+
 @media (max-width: 768px) {
   .title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
+  }
+  .subHeading {
+    font-size: 1.25rem;
   }
   .subtitle {
-    margin-bottom: 16px;
+    margin-bottom: 28px;
   }
-  .criteriaList {
-    gap: 8px;
+  .criteriaGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
   .criteriaCard {
-    padding: 12px;
-    align-items: flex-start;
+    padding: 18px 18px;
   }
 }

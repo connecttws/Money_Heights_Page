@@ -1,0 +1,140 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--card-border);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.navLink:hover {
+  color: var(--accent);
+}
+
+.navLinkActive {
+  color: var(--accent);
+}
+
+.ctaBtn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--primary);
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .navMenu {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 860px) {
+  .navMenu {
+    display: none;
+  }
+
+  .ctaDesktop {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: var(--shadow-lg);
+    padding: 24px 20px;
+    gap: 16px;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .mobileMenu .navLink {
+    font-size: 1.05rem;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .mobileMenu .ctaBtn {
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

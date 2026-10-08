@@ -6,12 +6,20 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
       <div className={`container ${styles.heroContainer}`}>
         <div className={styles.heroContent}>
           <h1 className="animate-fade-in-up">
-            <span className={styles.topLine}>Get an Instant</span>{' '}
-            <span className={styles.highlight}>Top-Up Loan</span>
-            <span className={styles.heroTitleSub}>on Your Existing Car Loan</span>
+            <span className={styles.titleMain}>
+              Explore <span className={styles.highlight}>Car Loan Top-Up Options</span>
+            </span>
+            <span className={styles.heroTitleSub}>
+              for Your Existing Car Loan
+            </span>
           </h1>
           
-          <div className={`${styles.videoContainerWrapper} animate-fade-in-up`} style={{ animationDelay: '0.2s' }}>
+          <p className={`${styles.heroSubtext} animate-fade-in-up`} style={{ animationDelay: '0.15s' }}>
+            Need additional funds while continuing with your existing car loan? <strong>MoneyyHeight</strong> helps eligible <strong>existing car-loan customers</strong> explore suitable <strong>top-up loan options</strong> based on their <strong>lender</strong>, <strong>repayment history</strong>, <strong>vehicle details</strong>, and other eligibility requirements.
+          </p>
+
+          {/* VSL Video Container - Preserved strictly in place */}
+          <div className={`${styles.videoContainerWrapper} animate-fade-in-up`} style={{ animationDelay: '0.3s' }}>
             <div className={styles.videoContainer}>
               <iframe
                 src="https://fast.wistia.net/embed/iframe/rndvo64mfb?seo=false&videoFoam=true"
@@ -22,14 +30,23 @@ export default function Hero({ onOpenModal }: { onOpenModal: () => void }) {
               ></iframe>
             </div>
           </div>
-
-          <p className={`${styles.heroSubtext} animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
-            Already have a car loan with <strong style={{ color: '#000', fontWeight: '800' }}>HDFC, ICICI, or Axis Bank</strong>? You may be eligible for additional funds with quick approvals and minimal paperwork
-          </p>
           
-          <div className={`${styles.ctaGroup} animate-fade-in-up`} style={{ animationDelay: '0.6s' }}>
-            <button className="btn-primary" onClick={onOpenModal}>Apply Now</button>
+          <div className={`${styles.ctaGroup} animate-fade-in-up`} style={{ animationDelay: '0.4s' }}>
+            <button className={`btn-primary ${styles.heroCtaBtn}`} onClick={onOpenModal}>
+              Check Your Eligibility
+            </button>
           </div>
+
+          {/* Feature Strip under CTA */}
+          <div className={`${styles.featuresStrip} animate-fade-in-up`} style={{ animationDelay: '0.45s' }}>
+            <span className={styles.featureItem}><span className={styles.featureCheck}>✓</span> Fast Online Review</span>
+            <span className={styles.featureItem}><span className={styles.featureCheck}>✓</span> 100% Confidential</span>
+            <span className={styles.featureItem}><span className={styles.featureCheck}>✓</span> Minimum 1 Year Old Loan</span>
+          </div>
+
+          <p className={styles.heroDisclaimer}>
+            <strong>Disclaimer:</strong> Eligibility is subject to lender policies, credit assessment, documentation, and final approval. Submitting your details does not guarantee loan approval.
+          </p>
         </div>
       </div>
       
