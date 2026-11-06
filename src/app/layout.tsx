@@ -28,7 +28,14 @@ export default function RootLayout({
       <body className={`${inter.variable} ${outfit.variable}`}>
         {children}
 
-        {/* Google tag (gtag.js) */}
+        {/* Google Tag Manager */}
+        <Script
+          id="gtm-base"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-T8KRR7TH"
+          strategy="afterInteractive"
+        />
+
+        {/* Google tag (gtag.js) - Google Ads */}
         <Script
           id="gtag-base"
           src="https://www.googletagmanager.com/gtag/js?id=AW-18371984960"
